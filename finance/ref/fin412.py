@@ -41,4 +41,3 @@ stock_data = fa.stock_data(2015,2016,comp1)
 
 
 print(stock_data[comp1].describe())
-
