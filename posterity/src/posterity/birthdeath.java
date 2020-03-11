@@ -5,7 +5,7 @@ import Jama.Matrix;
 public class birthdeath {
 	
 	
-	static Matrix chain(double[] comeup, double[] longevity, double raw_dances_score, int intervals) {
+	static double[] chain(double[] comeup, double[] longevity, double raw_dances_score, int intervals) {
 		
 		double total = 1.0;
 		
@@ -50,7 +50,17 @@ public class birthdeath {
 		
 		Matrix solution = inverse.times(ones.getMatrix(1,intervals-2,0,0));
 		
-		return solution;
+		
+		
+		double[] final_sol = new double[intervals-2];
+		
+		for(int i = 0; i < intervals-2; i++){
+			final_sol[i] = solution.get(i,0);
+		}
+		
+		
+		
+		return final_sol;
 	
 	}
 	
