@@ -1,6 +1,4 @@
-package posterity;
-
-import java.io.*; 
+package posterity; 
 class differential 
 { 
     double dydx(double x, double y) 
@@ -10,14 +8,14 @@ class differential
       
     // Finds value of y for a given x using step size h 
     // and initial value y0 at x0. 
-    double rungeKutta(double x0, double y0, double x, double h) 
+    static double rungeKutta(double x0, double y0, double x, double h) 
     { 
         differential d1 = new differential(); 
         // Count number of iterations using step size or 
         // step height h 
         int n = (int)((x - x0) / h); 
   
-        double k1, k2, k3, k4, k5; 
+        double k1, k2, k3, k4; 
   
         // Iterate for number of iterations 
         double y = y0; 

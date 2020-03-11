@@ -4,9 +4,9 @@ import Jama.Matrix;
 
 public class ehrenfest {
 	
-	static double chain(int num_people, double dance) {
+	static double chain(double people, double dance) {
 	
-		double people = num_people;
+		int num_people = (int) people;
 		
 		int bison = (int) Math.round(dance*people);
 		
