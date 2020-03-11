@@ -4,6 +4,9 @@ import Jama.Matrix;
 
 public class ehrenfest {
 	
+	
+	// 0 state ends up all cattle
+	
 	static double chain(double people, double dance) {
 	
 		int num_people = (int) people;
