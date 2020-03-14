@@ -1,12 +1,47 @@
 package com.example.posterity;
 
+import android.util.Log;
+
 import org.apache.commons.math3.stat.regression.SimpleRegression;
 
 import java.util.Set;
 
 public class calculate {
 
-        public static void battle(double num_people, double flux_people, double pace, double heat){
+    double[][] this_unexData;
+    double[][] this_epicData;
+    double[][] this_neutralData;
+
+
+    public calculate(){
+
+        for(int i=0; i < 100; i++) {
+
+            this_neutralData[i][0] = 12.0;
+            this_neutralData[i][1] = 12.0;
+            this_epicData[i][0] = 12.0;
+            this_epicData[i][1] = 12.0;
+            this_unexData[i][0] = 12.0;
+            this_unexData[i][1] = 12.0;
+            //System.out.println(i + "," + bison[i][1] + "," + cattle[i][1]);
+        }
+
+
+    }
+
+
+    public double[][] getUnexData(){
+        return this_unexData;
+    }
+    public double[][] getEpicData(){
+        return this_epicData;
+    }
+    public double[][] getNeutralData(){
+        return this_neutralData;
+    }
+
+
+        public void battle(double num_people, double flux_people, double pace, double heat){
 
 
             int intervals = (int) (4.0/pace); //Number of songs in 4 hours
@@ -49,6 +84,10 @@ public class calculate {
 
 
             dance equilibrium = new dance(0.5, heatdelta, size, raw_heats_score);
+            Log.e("Animals",String.valueOf(num_people));
+            Log.e("Flux",String.valueOf(flux_people));
+            Log.e("Heat",String.valueOf(heat));
+            Log.e("Pace", String.valueOf(pace));
             dance actual = new dance(heat, heatdelta, size, raw_heats_score);
 
             double[][] eqreg = new double[equilibrium.heatcount][2];
@@ -75,7 +114,7 @@ public class calculate {
 
 
             cohc = (actualslope/eqslope)*(size/6);
-            System.out.println(cohc);
+            //System.out.println(cohc);
             Set<double[][]> graphs = raw_battle.getGraphs(cohc, actual.heatcount, actual.bdchain, size, flux_people, cohdelta, forcedelta);
 
 
@@ -83,6 +122,10 @@ public class calculate {
             boolean oneepic = false;
             boolean oneunexpected = false;
 
+
+            double[][] unexData = new double[100][100];
+            double[][] epicData = new double[100][100];
+            double[][] neutralData = new double[100][100];
 
             for(double[][] graph : graphs) {
 
@@ -157,35 +200,76 @@ public class calculate {
 
                 if(neutral2 == false) {
                     if(neutral1 == false && oneneutral == false){
-                        System.out.println("Neutral");
+                        //System.out.println("Neutral");
                         for(int i=0; i < 100; i++) {
 
-                            System.out.println(i + "," + bison[i][1] + "," + cattle[i][1]);
+                            neutralData[i][0] = bison[i][1];
+                            neutralData[i][1] = cattle[i][1];
+                            //System.out.println(i + "," + bison[i][1] + "," + cattle[i][1]);
                         }
                         oneneutral = true;
                     }
                     if(epic == true && oneepic == false) {
-                        System.out.println("Epic");
+                        //System.out.println("Epic");
                         for(int i=0; i < 100; i++) {
 
-                            System.out.println(i + "," + bison[i][1] + "," + cattle[i][1]);
+                            epicData[i][0] = bison[i][1];
+                            epicData[i][1] = cattle[i][1];
+                            //System.out.println(i + "," + bison[i][1] + "," + cattle[i][1]);
                         }
                         oneepic = true;
                     }
                     if(unexpected == true && oneunexpected == false) {
-                        System.out.println("Unexpected");
+                        //System.out.println("Unexpected");
                         for(int i=0; i < 100; i++) {
-
-                            System.out.println(i + "," + bison[i][1] + "," + cattle[i][1]);
+                            unexData[i][0] = bison[i][1];
+                            unexData[i][1] = cattle[i][1];
+                            //System.out.println(i + "," + bison[i][1] + "," + cattle[i][1]);
                         }
                         oneunexpected = true;
                     }
                 }
 
+            } //For Graphs
+
+            if (oneunexpected == false){
+                //System.out.println("Unexpected");
+                for(int i=0; i < 100; i++) {
+                    unexData[i][0] = 12.0;
+                    unexData[i][1] = 12.0;
+                    //System.out.println(i + "," + bison[i][1] + "," + cattle[i][1]);
+                }
+                oneunexpected = true;
             }
 
+            if(oneepic == false) {
+                //System.out.println("Epic");
+                for(int i=0; i < 100; i++) {
 
-        }
+                    epicData[i][0] = 12.0;
+                    epicData[i][1] = 12.0;
+                    //System.out.println(i + "," + bison[i][1] + "," + cattle[i][1]);
+                }
+                oneepic = true;
+            }
+
+            if(oneneutral == false){
+                //System.out.println("Neutral");
+                for(int i=0; i < 100; i++) {
+
+                    neutralData[i][0] = 12.0;
+                    neutralData[i][1] = 12.0;
+                    //System.out.println(i + "," + bison[i][1] + "," + cattle[i][1]);
+                }
+                oneneutral = true;
+            }
+
+            this_unexData = unexData;
+            this_epicData = epicData;
+            this_neutralData = neutralData;
+
+
+        }// Method
 
 
 }
