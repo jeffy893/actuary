@@ -20,7 +20,7 @@ public class lines {
         List<PointValue> cAxisValues = new ArrayList();
 
 
-        Line bLine = new Line(bAxisValues).setColor(Color.parseColor("#9C27B0"));
+        Line bLine = new Line(bAxisValues).setColor(Color.parseColor("#008080"));
         Line cLine = new Line(cAxisValues).setColor(Color.parseColor("#800000"));
 
 

@@ -31,17 +31,18 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText et2, et;
     private SeekBar sb2, sb;
-    private TextView tv1, tv2, tv3, tv4;
+    private TextView tv1, tv2, tv3, tv4, tv5, tv6;
     private double heat, pace, flux_people, num_people;
     LineChartView lineChartView;
     int[] axisData;
     List axisValues, lines;
     Line bLine, cLine;
     Axis axis, baxis;
-    double[][] unexData;
+    double[][] unexData, unexData7, unexData12;
     LineChartData data;
     boolean chart;
     int size;
+    double wisdom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
         tv2 = findViewById(R.id.textView2);
         tv3 = findViewById(R.id.textView3);
         tv4 = findViewById(R.id.textView4);
+        tv5 = findViewById(R.id.textView5);
+        tv6 = findViewById(R.id.textView6);
         lineChartView = findViewById(R.id.chart);
         heat = 0.5;
         pace = 0.5;
@@ -86,6 +89,8 @@ public class MainActivity extends AppCompatActivity {
                 tv2.setVisibility(View.VISIBLE);
                 tv3.setVisibility(View.VISIBLE);
                 tv4.setVisibility(View.VISIBLE);
+                tv5.setVisibility(View.VISIBLE);
+                tv6.setVisibility(View.VISIBLE);
 
                 chart = false;
 
@@ -102,11 +107,41 @@ public class MainActivity extends AppCompatActivity {
                 //tv.setText("Num_People=" + num_people + ", Flux_People=" + flux_people + ", Heat=" + heat + ", Pace=" + pace);
 
 
+                unexData = new double[100][2];
+                unexData7 = new double[100][2];
+                unexData12 = new double[100][2];
+
+                for(int i=0; i < 100; i++) {
+
+                    unexData[i][0] = 12.0;
+                    unexData[i][1] = 12.0;
+                    unexData7[i][0] = 12.0;
+                    unexData7[i][1] = 12.0;
+                    unexData12[i][0] = 12.0;
+                    unexData12[i][1] = 12.0;
+                }
+
+
                 calculate compete = new calculate();
 
-                compete.battle(num_people, flux_people, pace, heat);
+                size = 12;
+                wisdom = 0.12;
+                compete.battle(num_people, flux_people, pace, heat, size, wisdom);
                 unexData = compete.getUnexData();
-                size = compete.size;
+                compete.battle(num_people, flux_people, pace, heat, 7, 0.07);
+                unexData7 = compete.getUnexData();
+                compete.battle(num_people, flux_people, pace, heat, 3, 0.03);
+                unexData12 = compete.getUnexData();
+
+                if(unexData12[5][1] != 12.0){
+                    unexData = unexData12;
+                    size = 12;
+                } else if(unexData7[5][1] != 12.0){
+                    unexData = unexData7;
+                    size = 7;
+                } else {
+                    size = 3;
+                }
 
 
 
@@ -165,6 +200,8 @@ public class MainActivity extends AppCompatActivity {
                 tv2.setVisibility(View.INVISIBLE);
                 tv3.setVisibility(View.INVISIBLE);
                 tv4.setVisibility(View.INVISIBLE);
+                tv5.setVisibility(View.INVISIBLE);
+                tv6.setVisibility(View.INVISIBLE);
                 lineChartView.setVisibility(View.VISIBLE);
 
                 chart = true;

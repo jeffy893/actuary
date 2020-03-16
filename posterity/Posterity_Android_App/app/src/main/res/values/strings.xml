@@ -13,5 +13,7 @@
     <string name="pace">Pace</string>
     <string name="heat">Heat</string>
     <string name="posterity">Posterity</string>
+    <string name="bison">BISON</string>
+    <string name="cattle">CATTLE</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>

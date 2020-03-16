@@ -9,11 +9,9 @@ import java.util.Set;
 public class calculate {
 
     double[][] this_unexData;
-    int size;
 
     public calculate(){
 
-        size = 3;
 
         this_unexData = new double[100][2];
 
@@ -32,26 +30,16 @@ public class calculate {
     }
 
 
-        public void battle(double num_people, double flux_people, double pace, double heat){
+        public void battle(double num_people, double flux_people, double pace, double heat, int size, double wisdom){
 
 
             int intervals = (int) (4.0/pace); //Number of songs in 4 hours
             double heatdelta = 1.0/(4.0/pace); //For incrementing the heat variable at the end of each song
-            size = 3; //Groups of 6, 14, and 24 will fight it out to end up bison or cattle
-            double wisdom = 0.12; //This is gaussian for both sides but a necessary variable in the lanchester
+            // double wisdom = 0.12; This is gaussian for both sides but a necessary variable in the lanchester
 
 
             // This is the size of group that should be approached
-            if(num_people/3 <= 5) {
-                size = 3;
-                wisdom = 0.03;
-            }else if(num_people/7 <= 5) {
-                size = 7;
-                wisdom = 0.07;
-            }else {
-                size = 12;
-                wisdom = 0.12;
-            }
+
 
             // increment force and cohesion for later battles
             double forcedelta = (size/3)/intervals;
