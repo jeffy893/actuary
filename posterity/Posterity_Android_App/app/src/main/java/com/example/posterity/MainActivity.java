@@ -23,7 +23,6 @@ import lecho.lib.hellocharts.model.Axis;
 import lecho.lib.hellocharts.model.AxisValue;
 import lecho.lib.hellocharts.model.Line;
 import lecho.lib.hellocharts.model.LineChartData;
-import lecho.lib.hellocharts.model.PointValue;
 import lecho.lib.hellocharts.view.LineChartView;
 
 
@@ -32,14 +31,17 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText et2, et;
     private SeekBar sb2, sb;
-    private TextView tv;
+    private TextView tv1, tv2, tv3, tv4;
     private double heat, pace, flux_people, num_people;
     LineChartView lineChartView;
     int[] axisData;
-    List bAxisValues, axisValues, cAxisValues;
-    Line bline, cline;
-    Axis axis, byaxis, cyaxis;
-    double[][] unexData, neutralData, epicData;
+    List axisValues, lines;
+    Line bLine, cLine;
+    Axis axis, baxis;
+    double[][] unexData;
+    LineChartData data;
+    boolean chart;
+    int size;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,11 +58,16 @@ public class MainActivity extends AppCompatActivity {
         et = findViewById(R.id.editText);
         sb2 = findViewById(R.id.seekBar2);
         sb = findViewById(R.id.seekBar);
-        tv = findViewById(R.id.textView4);
+        tv1 = findViewById(R.id.textView);
+        tv2 = findViewById(R.id.textView2);
+        tv3 = findViewById(R.id.textView3);
+        tv4 = findViewById(R.id.textView4);
+        lineChartView = findViewById(R.id.chart);
         heat = 0.5;
         pace = 0.5;
         flux_people = 1.0;
         num_people = 1.0;
+        chart = false;
 
 
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -68,90 +75,101 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+            if(chart == true){
 
+                lineChartView.setVisibility(View.INVISIBLE);
+                et.setVisibility(View.VISIBLE);
+                et2.setVisibility(View.VISIBLE);
+                sb.setVisibility(View.VISIBLE);
+                sb2.setVisibility(View.VISIBLE);
+                tv1.setVisibility(View.VISIBLE);
+                tv2.setVisibility(View.VISIBLE);
+                tv3.setVisibility(View.VISIBLE);
+                tv4.setVisibility(View.VISIBLE);
+
+                chart = false;
+
+            }else {
 
                 flux_people = Double.parseDouble(et2.getText().toString());
                 num_people = Double.parseDouble(et.getText().toString());
 
                 sb.setMax(10000);
                 sb2.setMax(10000);
-                pace = (((double)sb2.getProgress() / 10000.0) * 0.125) + 0.02;
-                heat = (((double)sb.getProgress() / 10000.0) * 0.8 ) + 0.1;
+                pace = (((double) sb2.getProgress() / 10000.0) * 0.125) + 0.02;
+                heat = (((double) sb.getProgress() / 10000.0) * 0.8) + 0.1;
 
-                tv.setText("Num_People=" + num_people + ", Flux_People=" + flux_people + ", Heat=" + heat + ", Pace=" + pace);
+                //tv.setText("Num_People=" + num_people + ", Flux_People=" + flux_people + ", Heat=" + heat + ", Pace=" + pace);
 
 
                 calculate compete = new calculate();
 
                 compete.battle(num_people, flux_people, pace, heat);
                 unexData = compete.getUnexData();
-                epicData = compete.getEpicData();
-                neutralData = compete.getNeutralData();
+                size = compete.size;
 
 
 
-                for(int i = 0; i < 100; i++){
+
+
+                axisValues = new ArrayList();
+
+                axisData = new int[100];
+
+                for (int i = 0; i < 100; i++) {
                     axisData[i] = i + 1;
                 }
 
-                bAxisValues = new ArrayList();
-                cAxisValues = new ArrayList();
-                axisValues = new ArrayList();
-
-                lineChartView = findViewById(R.id.chart);
-
-
-
-
-
-
-                for(int i = 0; i < i; i++){
-                    axisValues.add(i, new AxisValue(i).setLabel(String.valueOf(axisData[i])));
-                }
-
-                for (int i = 0; i < 100; i++){
-                    bAxisValues.add(new PointValue(i, bison[i][1]));
-                }
-                for (int i = 0; i < 100; i++){
-                    cAxisValues.add(new PointValue(i, bison[i][1]));
+                for (int i = 0; i < i; i++) {
+                    axisValues.add(i, new AxisValue(i).setLabel(String.valueOf(axisData[i]/4)));
                 }
 
 
-                bline = new Line(bAxisValues);
 
-                List lines = new ArrayList();
-                lines.add(line);
+                lines lin = new lines(unexData);
 
-
-
-                bline = new Line(byAxisValues).setColor(Color.parseColor("#9C27B0"));
-                cline = new Line(cyAxisValues).setColor(Color.parseColor("#9C27B0"));
-
-                axis.setTextColor(Color.parseColor("#03A9F4"));
-
-                byAxis.setTextColor(Color.parseColor("#03A9F4"));
-                cyAxis.setTextSize(16);
+                bLine = lin.this_bLine;
+                cLine = lin.this_cLine;
 
 
+                lines = new ArrayList();
+                lines.add(bLine);
+                lines.add(cLine);
 
 
-                LineChartData data = new LineChartData();
+                data = new LineChartData();
                 data.setLines(lines);
 
                 axis = new Axis();
+                baxis = new Axis();
                 axis.setValues(axisValues);
+                baxis.setTextSize(16);
+                axis.setTextSize(16);
+                axis.setTextColor(Color.parseColor("#03A9F4"));
+                baxis.setTextColor(Color.parseColor("#03A9F4"));
+
+
+
                 data.setAxisXBottom(axis);
-
-
-                byAxis = new Axis();
-                cyAxis = new Axis();
-                data.setAxisYLeft(byAxis);
-                data.setAxisYLeft(cyAxis);
+                data.setAxisYLeft(baxis);
 
 
                 lineChartView.setLineChartData(data);
 
 
+                et.setVisibility(View.INVISIBLE);
+                et2.setVisibility(View.INVISIBLE);
+                sb.setVisibility(View.INVISIBLE);
+                sb2.setVisibility(View.INVISIBLE);
+                tv1.setVisibility(View.INVISIBLE);
+                tv2.setVisibility(View.INVISIBLE);
+                tv3.setVisibility(View.INVISIBLE);
+                tv4.setVisibility(View.INVISIBLE);
+                lineChartView.setVisibility(View.VISIBLE);
+
+                chart = true;
+
+            }
 
 
             }

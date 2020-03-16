@@ -26,16 +26,6 @@
         app:layout_constraintTop_toBottomOf="@id/textview_second"
         android:visibility="invisible"/>
 
-    <com.softmoore.android.graphlib.GraphView
-        android:id="@+id/graph_view"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:constraintBottom_toTopOf="@id/button_second"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="22dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
 
     <TextView
         android:id="@+id/graph_view_label"

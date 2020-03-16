@@ -9,18 +9,15 @@ import java.util.Set;
 public class calculate {
 
     double[][] this_unexData;
-    double[][] this_epicData;
-    double[][] this_neutralData;
-
+    int size;
 
     public calculate(){
 
-        for(int i=0; i < 100; i++) {
+        size = 3;
 
-            this_neutralData[i][0] = 12.0;
-            this_neutralData[i][1] = 12.0;
-            this_epicData[i][0] = 12.0;
-            this_epicData[i][1] = 12.0;
+        this_unexData = new double[100][2];
+
+        for(int i=0; i < 100; i++) {
             this_unexData[i][0] = 12.0;
             this_unexData[i][1] = 12.0;
             //System.out.println(i + "," + bison[i][1] + "," + cattle[i][1]);
@@ -33,12 +30,6 @@ public class calculate {
     public double[][] getUnexData(){
         return this_unexData;
     }
-    public double[][] getEpicData(){
-        return this_epicData;
-    }
-    public double[][] getNeutralData(){
-        return this_neutralData;
-    }
 
 
         public void battle(double num_people, double flux_people, double pace, double heat){
@@ -46,7 +37,7 @@ public class calculate {
 
             int intervals = (int) (4.0/pace); //Number of songs in 4 hours
             double heatdelta = 1.0/(4.0/pace); //For incrementing the heat variable at the end of each song
-            int size = 3; //Groups of 6, 14, and 24 will fight it out to end up bison or cattle
+            size = 3; //Groups of 6, 14, and 24 will fight it out to end up bison or cattle
             double wisdom = 0.12; //This is gaussian for both sides but a necessary variable in the lanchester
 
 
@@ -264,9 +255,13 @@ public class calculate {
                 oneneutral = true;
             }
 
-            this_unexData = unexData;
-            this_epicData = epicData;
-            this_neutralData = neutralData;
+            if(epicData[5][0] != 12.0){
+                this_unexData = epicData;
+            }else if(unexData[5][0] != 12.0){
+                this_unexData = unexData;
+            } else{
+                this_unexData = neutralData;
+            }
 
 
         }// Method
