@@ -1,0 +1,31 @@
+Crowd Counting
+
+https://www.kaggle.com/fmena14/crowd-counting
+
+https://www.kaggle.com/tthien/shanghaitech-with-people-density-map
+
+https://www.kaggle.com/tthien/shanghaitech-with-people-density-map
+
+https://www.kaggle.com/danaelisanicolas/high-density-crowd-counting
+
+
+
+Temperature and Humidity IoT
+
+https://www.kaggle.com/search?q=humidity+sensor+in%3Adatasets
+
+https://www.kaggle.com/atulanandjha/temperature-readings-iot-devices
+
+https://www.kaggle.com/edotfs/dht11-temperature-and-humidity-sensor-1-day
+
+https://www.kaggle.com/rdickenson/cooktoptemp
+
+
+IoT Devices
+
+https://www.kaggle.com/drwardog/iot-device-captures
+
+https://www.kaggle.com/caidaorg/iot-smart-bulbs
+
+https://www.kaggle.com/annamariamandalari/data-iot
+

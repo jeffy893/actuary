@@ -1,0 +1,22 @@
+How the claims department is being undervalued with a parametric insurance model
+or, at least, how the metrics have to be designed in a way that the following immunized
+
+The claims department determines the distribution of negligence and intention between the plaintiff and the defendant
+
+How this relates to responsibility futures
+
+Claims tend to not be all or nothing
+If a claim is paid off, this legally attributes all negligence onto the defendent/cause
+
+The defendent needs to be clearly determined as being:
+
+Duty, Breach, Cause, Harm
+
+With intangible assets, it is critical that duty, breach, cause, and harm are considered
+
+Are there strict standards and guidelines and a review team to monitor and regulate the design of metrics
+Know that the attribution of negligence and intention will be assumed by the payoff
+
+Though the coin has percentages of interest and return
+and the claim payoff also has percentages because the metric will be a real number
+

@@ -1,0 +1,202 @@
+Primary Industry
+	Mining
+Secondary Industry
+	Manufacturing
+Tertiary Industry
+	Services
+
+Intangible Goods
+	Service Contracts, IP, Goodwill, Software, Trademarks, Data, rights-of-use, etc.
+
+Service Contracts are written in artificial or natural language
+	the trading of these contracts on primary and secondary markets
+	Warranties or the promise of maintenance per a time period
+	
+Defamation of Character, Pride of Ownership, Reputation
+
+Tangible assets are 60% covered
+Intangible assets are 16% covered
+
+4 Categories
+	Contracted Rights
+		Franchise and Royalty Agreements
+		Licensing Arrangements
+		Mineral Extractions Rights
+		Import Quotas
+		Negotiated Instruments
+	Capitalised R$D Spending
+	Goodwill
+	Brand Value
+
+
+Accounting standards have different ways of:
+Depreciation and Amortization
+
+Difference between value and price paid for intangible assets
+high uncertainty
+
+Goodwill is calculated by the difference between balanced
+	and non-balanced debits and credits
+	
+Leads to borrowing capacity
+
+What is the difference between goodwill and credit?
+
+R&D can be classified as Goodwill if bought from another
+	not if developed by self
+	
+Buying a business unit at above book value increases goodwill
+Buyback of internal shares increases treasury stocks
+
+A brand is a set of perceptions and feelings that a company owns
+	 in the mind of a consumer.
+	 Tries to establish a set of emotional responses.
+	 Apple Brand of $205bn means $26 per person on the planet
+		Somewhere in the brain alongside memories, fears, and motivations
+			is Apple, and its worth $26
+			
+1. Cost-based approach
+	advertising, promotional expenses, trademarks
+2. Income Based
+	Future expected revenue stream
+3. Consumer Survey
+	Public sentiment
+
+
+Can build portfolios of old patents
+IP infringement typically not covered in standard commercial
+	general liability insurance policy
+
+Defensive policies
+	Covers settlements
+Enforcement Policies
+	Allows policyholder to sue
+
+Based on legal costs, not commercial costs or lost revenues
+	those damages will presumably be gained in the winning of the lawsuit
+	
+Patent needs to be embodied in a machine, tool, or process
+
+If a software is deemed to improve a computer's functionality
+	it is patentable
+	but if the software performs a generalized functionality
+		and only uses the computer, then deemed as "abstract idea"
+		Mathematical algorithms are not patentable
+
+Oil Reserves = Analog Data
+Crude Oil = Digital Data
+Petroleum = Information
+
+Data being fungible
+	able to replace or be replaced by another identical item;
+	mutually interchangeable
+Depends on context - who knows it at what time
+Users give facebook, but not banks or hospitals, the right to mne their data
+
+
+Value of data can be found from the losses due to the breach of data
+
+Cyber Insurance
+	Business interruption, data recovery, regulatory fines, ransom demands
+	customer monitoring & recompense, PR and communications expenses
+	other costs required to bring systems back to normal
+	
+Net Diligence in Dec 2019 valued data breach at $178k for SME
+	$5.6m for large company
+	
+Confidentiality, integrity, and availability
+
+To diversify real estate, buy in different geographic locations
+
+Parametric Insurance
+Index triggers enough to start the claims process
+	Rainfall volume, Seismic Intensity
+
+Traditional insurance has base coverage and then outlines exclusions,
+	deductibles, and limits
+	Best for high frequency, easily modelable events
+PInsurance is based on inclusion, not exclusions
+
+Initially developed from catastrophic bonds (insurance-linked security) to provide
+	reinsurance for major disasters
+	Draw grid and if earthquake metric above marker then triggers payment
+	Pays out from one of the bonds in the series
+	
+	Also for aggeregate or indirect lost from crop failure
+	
+Futures in ILS
+
+Trigger and payout mechanism requires
+	IID RV - Independent and Identically Distributed Random Variables
+
+Need claims data to figure out risk in traditional insurance
+Parametric Insurance ises non-traditional sources
+
+Product differentiation
+
+PInsurance does not need to set up chains of causality
+	if metric happens, then payout
+
+A platform that allows risk holders to trade insurance linked securities
+	Cheaper claims process
+	Blockchain makes it easier
+	
+Blockchain style distributed ledgers
+	Smart contracts
+	
+Typically, transaction risk transferred to central authority
+
+Smart Contract
+	Items are clauses
+	Actions are how to transfer funds
+	Permissions are the triggers to transfer funds
+	
+Blockchain works by items, actions, and permissions
+
+ML allows for sophisticated triggers
+
+Platform companies fascilitate exchanges between producers and consumers
+
+Relationship between the risk and the index
+
+Adverse Basis Risk
+	Damage occurs but index not triggered
+Perverse Basis Risk
+	Index triggered but no damages
+	
+If too much perverse risk, then instrument becomes derivative
+	Proper level of granularity
+	
+Relative level of independence
+
+Brand Insurance Indices could be based on if service or product reverse engineered
+	and introduced to market...
+
+Brands increase desirability regardless of materials in product/service
+Management linked parametric triggers would not pass the
+	independence and moral hazard criteria
+	
+Brand names can be linked to derogatory words or pejoratives
+	coverage can be logged and indexed
+	
+Panemic catastrophe bonds
+	Infection rates, speed of spread, fatality statistics
+	basis for triggers
+	Every city can be reaached in three flights
+	Train delays more than 30 minutes
+
+
+Then indices set by market
+
+First of all, I was on the ede of my seat during the entire document.
+Everything came together on Page 29.
+Please see my attached Big Data Portfolio.
+Where are the markets that drive triggers?
+For instance, the earthquake bonds backed insurance could have a seismic reading metric of
+	6.5 when the risk is first put on the market. Then, the market could push that metric up and down.
+Auger is an upcoming prediction market.
+
+InsuranceLinked.com
+
+
+
